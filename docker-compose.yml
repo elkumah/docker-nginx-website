@@ -12,6 +12,16 @@ services:
   app1:
     build: ./app
     container_name: app1_container
+    healthcheck:
+      test: ["CMD", "wget", "-q0-", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
   app2:
     build: ./app
     container_name: app2_container
+    healthcheck:
+      test: ["CMD", "wget", "-q0-", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
