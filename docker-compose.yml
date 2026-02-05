@@ -10,7 +10,7 @@ services:
       - app1
       - app2
   app1:
-    build: ./app
+    image: efkumah/docker-nginx-app # pull image from docker hub
     container_name: app1_container
     healthcheck:
       test: ["CMD", "wget", "-q0-", "http://localhost"]
@@ -18,7 +18,7 @@ services:
       timeout: 10s
       retries: 5
   app2:
-    build: ./app
+    image: efkumah/docker-nginx-app # pull image from docker hub
     container_name: app2_container
     healthcheck:
       test: ["CMD", "wget", "-q0-", "http://localhost"]
