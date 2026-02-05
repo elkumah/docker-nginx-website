@@ -1,0 +1,17 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_container
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app1
+      - app2
+  app1:
+    build: ./app
+    container_name: app1_container
+  app2:
+    build: ./app
+    container_name: app2_container
