@@ -150,7 +150,6 @@ docker-compose up -d --scale app1=3
 
 ## Future Enhancements
 
-- Health checks and auto-restart policies
 - Environment-based configuration management
 - Logging aggregation (ELK stack integration)
 - Monitoring and performance metrics (Prometheus/Grafana)
